@@ -22,7 +22,7 @@ app.use(routes);
 app.use(express.static("public"));
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/workout',
+  process.env.MONGODB_URI || 'mongodb://localhost/workoutdb',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

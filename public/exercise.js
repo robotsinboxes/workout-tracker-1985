@@ -25,9 +25,9 @@ async function initExercise() {
   // what is this line doing?**********************************
   // if in URL what follows id= will be split out into and array
   // if there is no id, then wait for a new workout to be created
-  if (location.search.sp("=")[1] === undefined) {
+  if (location.search.split("=")[1] === undefined) {
     workout = await API.createWorkout()
-    console.log(workout)
+    console.log(workout + "Heyo! I'm line 30 exercise.js");
   }
   // if there is a workout already,
   if (workout) {

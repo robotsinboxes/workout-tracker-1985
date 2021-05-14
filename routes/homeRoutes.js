@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router();
 const path = require("path");
+const mongojs = require("mongojs");
+// const public = require("public");
 
 router.get('/', (req,res) => {
     res.sendFile(path.resolve(__dirname, "../public/index.html"));

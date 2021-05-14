@@ -1,4 +1,4 @@
-// const Workout = require('./Workout');
+const Workout = require('./Workout');
 // export Workout model for app to use
 
 module.exports = {

@@ -32,7 +32,7 @@ mongoose.connect(
 );
 
 // routes
-app.use(require("./routes"));
+// app.use(require("./routes"));
 
 // app.use(express.static(path.join(__dirname, 'public')));
 

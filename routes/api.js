@@ -1,9 +1,9 @@
 const express = require("express");
 const router = require("express").Router();
-const db = require("../models");
+const Workouts = require("../models/Workout");
 
 router.get('/workouts', (req,res) => {
-    db.Workout.aggregate([
+    Workout.aggregate([
         { $addFields:{totalDuration:
           {$sum:"$exercises.duration"}}}
     ])
@@ -16,7 +16,7 @@ router.get('/workouts', (req,res) => {
 });
 
 router.get('/workouts/range', (req,res) => {
-    db.Workout.aggregate([
+    Workout.aggregate([
         { $addFields:{totalDuration:
           {$sum:"$exercises.duration"}}}
       ])
@@ -29,7 +29,7 @@ router.get('/workouts/range', (req,res) => {
 });
 
 router.put("/workouts/:id", (req, res) => {
-    db.Workout.findByIdAndUpdate(
+    Workout.findByIdAndUpdate(
      {
         _id: req.params.id
     },
@@ -49,7 +49,7 @@ router.put("/workouts/:id", (req, res) => {
 });
 
 router.post('/workouts', ({body},res) => {
-    db.Workout.create({body})
+    Workout.create({body})
     .then(workout => {
       res.json(workout);
     })

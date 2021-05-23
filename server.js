@@ -9,7 +9,7 @@ const routes = require('./routes')
 
 const PORT = process.env.PORT || 3001;
 
-const db = require("./models");
+// const db = require("./models");
 
 const app = express();
 
@@ -32,9 +32,9 @@ mongoose.connect(
 );
 
 // routes
-// app.use(require("./routes"));
+app.use(require("./routes"));
 
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.listen(PORT, () => {
